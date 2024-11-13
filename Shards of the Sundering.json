@@ -1,0 +1,740 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "ShardsoftheSundering",
+				"abbreviation": "SoS",
+				"full": "Shards of the Sundering",
+				"version": "1.0.0",
+				"color": "7f09aa"
+			}
+		]
+	},
+	"monster": [
+		{
+			"name": "Bride of Kanchelsis",
+			"size": [
+				"M"
+			],
+			"type": "undead",
+			"source": "ShardsoftheSundering",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "15d8 + 45",
+				"average": 112
+			},
+			"speed": {
+				"walk": 30,
+				"swim": 40
+			},
+			"str": 12,
+			"dex": 18,
+			"con": 16,
+			"int": 14,
+			"wis": 16,
+			"cha": 20,
+			"passive": 13,
+			"cr": "10",
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languages": [
+				"Abyssal",
+				"Common",
+				"Infernal",
+				"Telepathy 60 ft."
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"I"
+			],
+			"save": {
+				"dex": "+8",
+				"str": "+1",
+				"con": "+3",
+				"cha": "+9",
+				"wis": "+7",
+				"int": "+2"
+			},
+			"skill": {
+				"deception": "+9",
+				"insight": "+7",
+				"stealth": "+8"
+			},
+			"resist": [
+				"cold",
+				"necrotic",
+				{
+					"special": "Bludgeoning, Piercing, and Slashing from Nonmagical Attacks"
+				}
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened",
+				"poisoned"
+			],
+			"trait": [
+				{
+					"name": "Shapechanger",
+					"entries": [
+						"The Bride can use their action to polymorph into a snake-like form or back into their humanoid form. Their stats remain the same in both forms."
+					]
+				},
+				{
+					"name": "Blood Frenzy",
+					"entries": [
+						"The Brides have advantage on melee attack rolls against creatures that are at less than their maximum hit points."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If a Bride fails a saving throw, she can choose to succeed instead."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Shapechanger"
+			],
+			"action": [
+				{
+					"name": "Actions",
+					"entries": [
+						"Multiattack. The Bride makes three attacks: two with her Claws and one with Blood Lash."
+					]
+				},
+				{
+					"name": "Claws.",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) slashing damage. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or lose 5 ({@dice 1d10}) hit points at the start of each of its turns due to blood loss. Any creature can take an action to stanch the wound with a successful {@dc 15} Wisdom (Medicine) check."
+					]
+				},
+				{
+					"name": "Blood Lash.",
+					"entries": [
+						"{@atk rs} {@hit 9} to hit, range 30 ft., one target. {@h}21 ({@damage 4d8 + 5}) necrotic damage. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or be {@condition restrained} until the end of the Bride’s next turn as blood bonds lash around it."
+					]
+				},
+				{
+					"name": "Blood Puppet (Recharge 5-6).",
+					"entries": [
+						"The Bride forces a creature within 60 feet to make a {@dc 17} Constitution saving throw. On a failure, the creature’s blood is controlled by the Bride, and it is {@condition charmed} for 1 minute. While {@condition charmed}, the Bride can control the creature's movements as a bonus action. The {@condition charmed} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Blood Boil (1/Day).",
+					"entries": [
+						"The Bride chooses a creature within 60 feet. The target must succeed on a {@dc 17} Constitution saving throw or take 45 ({@damage 10d8}) necrotic damage, half as much on a successful save. A creature reduced to 0 hit points by this ability dies as its blood boils and explodes."
+					]
+				}
+			],
+			"miscTags": [
+				"MW",
+				"RA"
+			],
+			"conditionInflict": [
+				"charmed",
+				"restrained"
+			],
+			"legendary": [
+				{
+					"name": "Blood Charm",
+					"entries": [
+						"The Bride targets one creature within 30 feet. The target must succeed on a {@dc 17} Wisdom saving throw or be {@condition charmed} for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Crimson Shield",
+					"entries": [
+						"The Bride creates a barrier of hardened blood around herself, gaining a +2 bonus to AC until the start of her next turn."
+					]
+				},
+				{
+					"name": "Drain Life (Costs 2 Actions)",
+					"entries": [
+						"The Bride targets one creature within 10 feet that is {@condition restrained} by blood bonds. The target takes 18 ({@damage 4d8}) necrotic damage, and the Bride regains hit points equal to the damage dealt."
+					]
+				}
+			],
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"headerEntries": [
+						"The Bride's spellcasting ability is Charisma (spell save {@dc 17}). It can innately cast the following spells, requiring no material components:"
+					],
+					"daily": {
+						"1e": [
+							"{@spell blood binding|ShardsoftheSundering}",
+							"{@spell blood puppet|ShardsoftheSundering}",
+							"{@spell blood spear|ShardsoftheSundering}",
+							"{@spell blood tether|ShardsoftheSundering}",
+							"{@spell blood wave|ShardsoftheSundering}",
+							"{@spell crimson barrier|ShardsoftheSundering}",
+							"{@spell crimson chains|ShardsoftheSundering}",
+							"{@spell hemorrhage|ShardsoftheSundering}",
+							"{@spell sanguine shield|ShardsoftheSundering}",
+							"{@spell sanguine whip|ShardsoftheSundering}",
+							"{@spell wall of blood ice|ShardsoftheSundering}"
+						]
+					},
+					"ability": "cha",
+					"type": "spellcasting"
+				}
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"damageTags": [
+				"N",
+				"S"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"wisdom"
+			]
+		}
+	],
+	"spell": [
+		{
+			"name": "Wall of Blood Ice",
+			"level": 7,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					},
+					"concentration": true
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You create a wall of frozen blood in a shape you desire within range. You can form the wall into a flat surface up to 10 feet high, 40 feet long, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 10 feet high, and 1 foot thick. The wall lasts for the duration.",
+				"When the wall appears, each creature within its area must make a DC 17 Constitution saving throw, taking {@dice 10d6} cold and necrotic damage on a failed save, or half as much on a successful one. Creatures that fail the save are {@condition restrained} as blood ice forms around them, bonding them to the wall until they use an action to break free with a DC 15 Strength check.",
+				"The wall itself is made of crimson, ice-like blood, with semi-coagulated veins and ridges throughout. It is considered difficult terrain, and creatures within 5 feet of the wall at the start of their turn take {@damage 3d6} necrotic damage as the blood ice saps their vitality.",
+				"Each 10-foot section of the wall has AC 12, 30 hit points, vulnerability to fire damage, and immunity to necrotic, poison, and psychic damage. If a section is reduced to 0 hit points, it melts into a pool of blood that persists as difficult terrain until the spell ends."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a shard of hardened blood or a drop of the caster’s blood"
+			}
+		},
+		{
+			"name": "Blood Tether",
+			"level": 4,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You form a crimson tether between yourself and a creature within range, linking your vitality. Whenever you take damage, the creature takes necrotic damage equal to half the damage you took. The tether persists until the creature is more than 60 feet from you or the spell ends."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true
+			}
+		},
+		{
+			"name": "Hemorrhage",
+			"level": 6,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You cause the blood within a creature’s body to surge and rupture. Choose one creature you can see within range. The target must make a DC 17 Constitution saving throw. On a failed save, it takes {@damage 10d8} necrotic damage as its blood vessels rupture, and it is {@condition stunned} until the start of its next turn. On a successful save, it takes half as much damage and is not {@condition stunned}.",
+				"If the creature has blood (or similar internal fluids), it also suffers disadvantage on attack rolls and ability checks until the end of its next turn, as it struggles with the pain and loss of vitality."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true
+			}
+		},
+		{
+			"name": "Crimson Barrier",
+			"level": 4,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "radius",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You create a shimmering, blood-red barrier around yourself in a 10-foot radius. Any creature that enters the barrier for the first time on a turn or starts its turn there takes {@damage 2d8} necrotic damage. While within the barrier, you have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks.",
+				"The barrier moves with you, and creatures you choose can pass through it unharmed."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a drop of blood"
+			}
+		},
+		{
+			"name": "Blood Binding",
+			"level": 5,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "turn",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You bind a creature's blood to your will, making it painful for them to stray far. Choose one creature within range. That creature must make a DC 17 Constitution saving throw. On a failed save, it is bound to you by a tendril of blood.",
+				"While bound, the creature’s speed is halved, and for each 10 feet it moves away from you, it takes {@damage 1d8} necrotic damage. If it moves more than 30 feet away from you, it takes an additional {@damage 3d8} necrotic damage and must repeat the saving throw. On a success, the spell ends."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a piece of the target’s blood-soaked garment"
+			}
+		},
+		{
+			"name": "Blood Spear",
+			"level": 2,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "turn",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You conjure a spear made of coagulated blood at a point you choose within range. The spear deals necrotic damage instead of force, striking with sickening precision. On a hit, the spear deals {@damage 1d8} + your spellcasting ability modifier necrotic damage.",
+				"As a bonus action on your turn, you can move the spear up to 20 feet and repeat the attack against a creature within 5 feet. The spear appears as a dark red, almost pulsing, weapon that targets feel faint around."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d8} for every two slot levels above 2nd."
+					]
+				}
+			]
+		},
+		{
+			"name": "Crimson Chains",
+			"level": 2,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You summon chains made of blood that coil around a humanoid within range. The target must succeed on a Wisdom saving throw or be {@condition paralyzed} for the duration. The chains pulse faintly, and each turn, the target can attempt to break free, repeating the saving throw at the end of each of its turns.",
+				"When bound, the chains can be visually eerie—dark crimson tendrils that seem to pull strength from the victim's body, growing tighter with each failed saving throw."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a blood soaked chain link"
+			},
+			"conditionInflict": [
+				"paralyzed"
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"You can target one additional humanoid for each level above 2nd. The creatures must be within 30 feet of each other when you target them."
+					]
+				}
+			]
+		},
+		{
+			"name": "Blood Puppet",
+			"level": 3,
+			"school": "N",
+			"time": [
+				{
+					"number": 10,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You manipulate the blood within a corpse to animate it as a blood-bound puppet. The corpse animates as a zombie but exhibits jerky, almost marionette-like movements. It follows your commands and shares your Blood Frenzy ability if you have it. It does not regain hit points but can be restored by blood magic."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "fermented blood from someone who died from blood loss"
+			},
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"You can animate one additional creature for each slot level above 3rd."
+					]
+				}
+			]
+		},
+		{
+			"name": "Sanguine Shield",
+			"level": 1,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10,
+						"upTo": true
+					},
+					"concentration": true
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You create a shield around a creature, drawn from its own blood, which grants a +2 bonus to AC for the duration. The shield appears as a faint red aura, pulsing in time with the creature’s heartbeat. If the target is hit, the shield absorbs some of the impact, leaving faint streaks of blood on the outer aura."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true
+			}
+		},
+		{
+			"name": "Blood Wave",
+			"level": 4,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You conjure a surge of blood in a wave up to 30 feet long, 10 feet wide, and 10 feet tall. Each creature in the area must make a Dexterity saving throw, taking {@damage 4d8} bludgeoning damage and {@damage 4d8} necrotic damage on a failed save, or half as much on a successful one. On a failed save, the creature is knocked {@condition prone}.",
+				"The wave leaves behind pools of coagulated blood that remain difficult terrain for the next round, slick with an unnerving aura."
+			],
+			"source": "ShardsoftheSundering",
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a large body of blood eg. pool of blood"
+			},
+			"conditionInflict": [
+				"prone"
+			]
+		},
+		{
+			"name": "Sanguine Whip",
+			"level": 4,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 90
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "turn",
+						"amount": 1,
+						"upTo": true
+					},
+					"concentration": true
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"entries": [
+				"You create a sphere of blood that lashes out with tendrils, able to restrain creatures. The sphere can restrain a creature within 5 feet of it, who must succeed on a Strength saving throw or become {@condition restrained} as it is trapped by the bloody tendrils.",
+				"While {@condition restrained}, the creature takes {@damage 2d8} necrotic damage at the start of each of its turns. You can move the sphere up to 30 feet each turn as a bonus action."
+			],
+			"source": "ShardsoftheSundering",
+			"conditionInflict": [
+				"restrained"
+			],
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a vial of blood mixed with water"
+			}
+		}
+	]
+}
